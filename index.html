@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAIROTHON 2K26 — A Fusion of Innovation | VEMU Institute of Technology</title>
+    <meta name="description"
+        content="KAIROTHON 2K26 is a premier college-level hackathon by VEMU Institute of Technology — innovate, compete, and build the future.">
+    <meta name="theme-color" content="#F8FBFF">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Particle Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Background Animated Blobs -->
+    <div class="bg-animation">
+        <div class="ion"></div>
+        <div class="ion"></div>
+        <div class="ion"></div>
+    </div>
+
+    <!-- Navbar — Floating Pill -->
+    <nav class="navbar" id="main-navbar">
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#domains">Domains</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#prizes">Prizes</a></li>
+            <li><a href="#student-coordinators">Coordinators</a></li>
+            <li><a href="https://forms.gle/JM21pp3rQ7GE6NMV9" target="_blank" class="btn btn-primary"
+                    style="padding: 10px 24px; font-size: 0.8rem;">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- ======================== HERO ======================== -->
+    <section id="home" class="hero">
+        <div class="hero-logo-bg" aria-hidden="true"></div>
+        <div class="floating-icons">
+            <i class="fas fa-code" style="top: 18%; left: 8%;"></i>
+            <i class="fas fa-microchip" style="top: 55%; left: 82%;"></i>
+            <i class="fas fa-robot" style="top: 28%; left: 72%;"></i>
+            <i class="fas fa-wifi" style="top: 72%; left: 12%;"></i>
+            <i class="fas fa-database" style="top: 82%; left: 55%;"></i>
+            <i class="fas fa-brain" style="top: 12%; left: 52%;"></i>
+            <i class="fas fa-terminal" style="top: 45%; left: 5%;"></i>
+            <i class="fas fa-shield-halved" style="top: 38%; left: 90%;"></i>
+        </div>
+
+        <div class="hero-countdown" data-aos="fade-up" data-aos-delay="900">
+            <div class="countdown">
+                <div class="count-item">
+                    <span id="days" class="count-val">00</span>
+                    <span class="count-label">Days</span>
+                </div>
+                <div class="count-item">
+                    <span id="hours" class="count-val">00</span>
+                    <span class="count-label">Hours</span>
+                </div>
+                <div class="count-item">
+                    <span id="minutes" class="count-val">00</span>
+                    <span class="count-label">Minutes</span>
+                </div>
+                <div class="count-item">
+                    <span id="seconds" class="count-val">00</span>
+                    <span class="count-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar" data-aos="fade-up">
+        <div class="stat-item">
+            <span class="stat-value" data-target="500">0</span>
+            <span class="stat-label">Participants</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value" data-target="8">0</span>
+            <span class="stat-label">Departments</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value" data-target="24">0</span>
+            <span class="stat-label">Hours</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value" data-target="50">0</span>
+            <span class="stat-label">Mentors</span>
+        </div>
+    </div>
+
+    <!-- ======================== ABOUT ======================== -->
+    <section id="about">
+        <h2 class="section-title" data-aos="fade-up">About KAIROTHON</h2>
+        <div class="about-grid">
+            <div class="about-img glass-card" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60"
+                    alt="Hackathon event" loading="lazy">
+            </div>
+            <div class="about-text" data-aos="fade-left">
+                <h3>VEMU Institute of Technology</h3>
+                <p>KAIROTHON 2K26 is a premium college-level hackathon designed to foster innovation, problem-solving,
+                    and creativity among future engineers. It brings together the brightest minds across multiple
+                    departments to tackle real-world challenges.</p>
+                <p><strong>Vision:</strong> Empowering students to transform ideas into tangible technologies.</p>
+                <p><strong>Objective:</strong> To provide a platform where creativity meets technology, resulting in
+                    actionable solutions for a sustainable and innovative future.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== DEPARTMENTS ======================== -->
+    <section id="domains">
+        <h2 class="section-title" data-aos="fade-up">Departments Showcase</h2>
+
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
+
+            <!-- CSE -->
+            <div class="glass-card" data-aos="fade-up"
+                style="padding: 28px; border-left: 3px solid var(--neon-cyan); text-align: center;">
+                <i class="fas fa-laptop-code domain-icon" style="color: var(--neon-cyan);"></i>
+                <h3 class="domain-title">CSE</h3>
+                <p style="margin-bottom: 18px; color: var(--text-dim); font-size: 0.88rem;">Computer Science &
+                    Engineering: Advanced algorithms, secure networks, and software architecture.</p>
+                <ul class="domain-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                    <li>Core Programming</li>
+                    <li>Cyber Security</li>
+                    <li>Web Development</li>
+                    <li>Cloud Computing</li>
+                </ul>
+            </div>
+
+            <!-- CSIT -->
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="80"
+                style="padding: 28px; border-left: 3px solid var(--neon-violet); text-align: center;">
+                <i class="fas fa-server domain-icon" style="color: var(--neon-violet);"></i>
+                <h3 class="domain-title">CSIT</h3>
+                <p style="margin-bottom: 18px; color: var(--text-dim); font-size: 0.88rem;">Computer Science & IT:
+                    Integrating functionality with business and data workflows.</p>
+                <ul class="domain-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                    <li>IT Infrastructure</li>
+                    <li>Database Mgmt</li>
+                    <li>Network Sec</li>
+                    <li>Enterprise Apps</li>
+                </ul>
+            </div>
+
+            <!-- AI -->
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="160"
+                style="padding: 28px; border-left: 3px solid var(--neon-magenta); text-align: center;">
+                <i class="fas fa-robot domain-icon" style="color: var(--neon-magenta);"></i>
+                <h3 class="domain-title">AI</h3>
+                <p style="margin-bottom: 18px; color: var(--text-dim); font-size: 0.88rem;">Artificial Intelligence:
+                    Pushing boundaries of intelligent systems and cognitive models.</p>
+                <ul class="domain-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                    <li>Computer Vision</li>
+                    <li>Generative AI</li>
+                    <li>Cognitive Computing</li>
+                    <li>Expert Systems</li>
+                </ul>
+            </div>
+
+            <!-- AIML -->
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="240"
+                style="padding: 28px; border-left: 3px solid var(--neon-yellow); text-align: center;">
+                <i class="fas fa-brain domain-icon" style="color: var(--neon-yellow);"></i>
+                <h3 class="domain-title">AIML</h3>
+                <p style="margin-bottom: 18px; color: var(--text-dim); font-size: 0.88rem;">AI & Machine Learning:
+                    Neural networks and predictive modeling power.</p>
+                <ul class="domain-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                    <li>Deep Learning</li>
+                    <li>Predictive Analytics</li>
+                    <li>NLP</li>
+                    <li>Data Mining</li>
+                </ul>
+            </div>
+
+            <!-- ECE -->
+            <div class="glass-card" data-aos="fade-up"
+                style="padding: 28px; border-left: 3px solid var(--neon-green); text-align: center;">
+                <i class="fas fa-microchip domain-icon" style="color: var(--neon-green);"></i>
+                <h3 class="domain-title">ECE</h3>
+                <p style="margin-bottom: 18px; color: var(--text-dim); font-size: 0.88rem;">Electronics & Comms: Smart
+                    sensors and next-gen communication systems.</p>
+                <ul class="domain-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                    <li>Embedded Systems</li>
+                    <li>IoT Solutions</li>
+                    <li>VLSI Design</li>
+                    <li>Wireless Comm</li>
+                </ul>
+            </div>
+
+            <!-- EEE -->
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="80"
+                style="padding: 28px; border-left: 3px solid var(--neon-orange); text-align: center;">
+                <i class="fas fa-bolt domain-icon" style="color: var(--neon-orange);"></i>
+                <h3 class="domain-title">EEE</h3>
+                <p style="margin-bottom: 18px; color: var(--text-dim); font-size: 0.88rem;">Electrical & Electronics:
+                    Renewable energy grids and efficient power systems.</p>
+                <ul class="domain-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                    <li>Smart Grid</li>
+                    <li>Renewable Energy</li>
+                    <li>EV Charging</li>
+                    <li>Power Systems</li>
+                </ul>
+            </div>
+
+            <!-- Mechanical -->
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="160"
+                style="padding: 28px; border-left: 3px solid var(--neon-cyan); text-align: center;">
+                <i class="fas fa-cogs domain-icon" style="color: var(--neon-cyan);"></i>
+                <h3 class="domain-title">Mechanical Eng.</h3>
+                <p style="margin-bottom: 18px; color: var(--text-dim); font-size: 0.88rem;">Innovation via automation,
+                    advanced manufacturing, and structural design.</p>
+                <ul class="domain-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                    <li>Robotics</li>
+                    <li>CAD/CAM</li>
+                    <li>Automation</li>
+                    <li>3D Printing</li>
+                </ul>
+            </div>
+
+            <!-- Civil -->
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="240"
+                style="padding: 28px; border-left: 3px solid var(--neon-violet); text-align: center;">
+                <i class="fas fa-city domain-icon" style="color: var(--neon-violet);"></i>
+                <h3 class="domain-title">Civil Engineering</h3>
+                <p style="margin-bottom: 18px; color: var(--text-dim); font-size: 0.88rem;">Resilient sustainable
+                    infrastructure, green tech, and smart city planning.</p>
+                <ul class="domain-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                    <li>Smart Cities</li>
+                    <li>Sustainable Bldg</li>
+                    <li>Disaster Mgmt</li>
+                    <li>Green Tech</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======================== INNOVATIONS ======================== -->
+    <section id="innovations">
+        <h2 class="section-title" data-aos="fade-up">New Innovations</h2>
+        <div class="domains-grid">
+            <a href="#" class="domain-card glass-card innovation-link" data-aos="fade-up" data-aos-delay="100"
+                style="text-decoration:none; display:block;">
+                <i class="fas fa-rocket domain-icon" style="color: var(--neon-orange);"></i>
+                <h3 class="domain-title">Space Tech</h3>
+                <p style="color: var(--text-dim);">Explore the latest in orbital systems and satellite communication.
+                </p>
+            </a>
+            <a href="#" class="domain-card glass-card innovation-link" data-aos="fade-up" data-aos-delay="200"
+                style="text-decoration:none; display:block;">
+                <i class="fas fa-leaf domain-icon" style="color: var(--neon-green);"></i>
+                <h3 class="domain-title">Green Energy</h3>
+                <p style="color: var(--text-dim);">Innovate sustainable and renewable energy solutions for the future.
+                </p>
+            </a>
+            <a href="#" class="domain-card glass-card innovation-link" data-aos="fade-up" data-aos-delay="300"
+                style="text-decoration:none; display:block;">
+                <i class="fas fa-heartbeat domain-icon" style="color: var(--neon-magenta);"></i>
+                <h3 class="domain-title">HealthTech</h3>
+                <p style="color: var(--text-dim);">Revolutionize healthcare with smart devices and AI diagnostics.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- ======================== TIMELINE ======================== -->
+    <section id="timeline">
+        <h2 class="section-title" data-aos="fade-up">Event Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item left glass-card" data-aos="fade-right">
+                <div class="timeline-content">
+                    <span class="timeline-date">AUG 10, 2026</span>
+                    <h3>Idea Submission</h3>
+                    <p>Submit your innovative ideas and team details before the deadline.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right glass-card" data-aos="fade-left">
+                <div class="timeline-content">
+                    <span class="timeline-date">AUG 13, 2026</span>
+                    <h3>Shortlisting</h3>
+                    <p>Announcement of shortlisted teams for the main event.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left glass-card" data-aos="fade-right">
+                <div class="timeline-content">
+                    <span class="timeline-date">AUG 13, 2026</span>
+                    <h3>Hackathon Day</h3>
+                    <p>Kairothon kicks off! 24-hours of coding and building solutions.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right glass-card" data-aos="fade-left">
+                <div class="timeline-content">
+                    <span class="timeline-date">AUG 14, 2026</span>
+                    <h3>Final Presentation</h3>
+                    <p>Pitch your prototype to the jury and prize distribution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== PRIZES ======================== -->
+    <section id="prizes">
+        <h2 class="section-title" data-aos="fade-up">Prizes & Awards</h2>
+        <div class="domains-grid">
+            <div class="domain-card glass-card" data-aos="flip-left"
+                style="border-bottom: 3px solid var(--neon-yellow);">
+                <i class="fas fa-trophy domain-icon" style="color: var(--neon-yellow);"></i>
+                <h3 class="domain-title">Winner</h3>
+                <p>Exciting Cash Prize + Platinum Certificate + Mentorship</p>
+            </div>
+            <div class="domain-card glass-card" data-aos="flip-up" style="border-bottom: 3px solid var(--neon-cyan);">
+                <i class="fas fa-medal domain-icon" style="color: var(--text-dim);"></i>
+                <h3 class="domain-title">Runner-Up</h3>
+                <p>Cash Prize + Gold Certificate</p>
+            </div>
+            <div class="domain-card glass-card" data-aos="flip-right"
+                style="border-bottom: 3px solid var(--neon-magenta);">
+                <i class="fas fa-award domain-icon" style="color: var(--neon-orange);"></i>
+                <h3 class="domain-title">Special Awards</h3>
+                <p>Best Innovation, People's Choice & Social Impact Awards</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== ORGANISERS ======================== -->
+    <section id="organisers">
+        <h2 class="section-title" data-aos="fade-up">Organising Committee & Partners</h2>
+        <div class="organisers-container glass-card" style="margin: 30px auto; max-width: 1000px; padding: 40px;"
+            data-aos="zoom-in" data-aos-delay="200">
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px; align-items: start; margin-bottom: 36px; text-align: center;">
+                <div>
+                    <i class="fas fa-user-circle" style="font-size: 2.5rem; margin-bottom: 12px;"></i>
+                    <h4>CONVENOR</h4>
+                    <p
+                        style="font-weight: 600; font-size: 1.05rem; color: var(--text-bright) !important; margin-top: 6px;">
+                        K.Naveen</p>
+                    <p style="color: var(--text-muted) !important; font-size: 0.85rem; font-family: var(--font-mono);">
+                        9703642479</p>
+                </div>
+                <div>
+                    <i class="fas fa-user-circle" style="font-size: 2.5rem; margin-bottom: 12px;"></i>
+                    <h4>HEAD OF DEPARTMENTS</h4>
+                    <p style="font-weight: 500; font-size: 0.9rem; line-height: 1.7; margin-top: 6px;">
+                        Dr.P.Nirupama<br>
+                        Dr.P.Nageswara Rao<br>
+                        Dr.D.Murali<br>
+                        Dr.V.Saraswathi bai
+                    </p>
+                </div>
+                <div>
+                    <i class="fas fa-user-circle" style="font-size: 2.5rem; margin-bottom: 12px;"></i>
+                    <h4>PRINCIPAL</h4>
+                    <p
+                        style="font-weight: 600; font-size: 1.05rem; color: var(--text-bright) !important; margin-top: 6px;">
+                        Dr.Naveen Kilari</p>
+                </div>
+
+            </div>
+
+            <!-- Social Bar -->
+            <div
+                style="background: linear-gradient(135deg, var(--neon-cyan), var(--neon-violet)); color: #07111e; padding: 16px; border-radius: 12px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 32px;">
+                <div style="display: flex; align-items: center; gap: 10px; font-size: 1.05rem; font-weight: 600;">
+                    <i class="fab fa-instagram"></i> vemuchittoor
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px; font-size: 1.05rem; font-weight: 600;">
+                    <i class="fab fa-facebook"></i> vemuitech
+                </div>
+            </div>
+
+            <!-- Partners -->
+            <div
+                style="display: flex; justify-content: center; align-items: center; gap: 36px; flex-wrap: wrap; text-align: center;">
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; max-width: 130px;">
+                    <img src="ieee.png" alt="IEEE Computer Society" style="height: 50px; object-fit: contain;">
+                    <span
+                        style="font-weight: 600; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-mono);">IEEE
+                        COMPUTER SOCIETY</spIan>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; max-width: 130px;">
+                    <img src="logoinsti.png" alt="IIC" style="height: 50px; object-fit: contain;">
+                    <span
+                        style="font-weight: 600; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-mono);">INSTITUTION
+                        INNOVATION COUNCIL</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; max-width: 130px;">
+                    <img src="Aicte.png" alt="AICTE IDEALab" style="height: 50px; object-fit: contain;">
+                    <span
+                        style="font-weight: 600; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-mono);">AICTE</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; max-width: 130px;">
+                    <img src="programmers club.png" alt="Programmers Club" style="height: 50px; object-fit: contain;">
+                    <span
+                        style="font-weight: 600; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-mono);">PROGRAMMERS
+                        CLUB</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== STUDENT COORDINATORS ======================== -->
+    <section id="student-coordinators">
+        <h2 class="section-title" data-aos="fade-up">Student Coordinators</h2>
+        <div class="coordinators-grid">
+            <div class="coordinator-card glass-card" data-aos="fade-up" data-aos-delay="360">
+                <h3>Shaik Baaji</h3>
+                <p>3rd year-AIML</p>
+                <span>8639711841</span>
+            </div>
+            <div class="coordinator-card glass-card" data-aos="fade-up" data-aos-delay="400">
+                <h3>G Bhanu Prasad Reddy</h3>
+                <p>3rd year-AIML</p>
+                <span>8247226742</span>
+            </div>
+            <div class="coordinator-card glass-card" data-aos="fade-up" data-aos-delay="440">
+                <h3>S Arif</h3>
+                <p>3rd year-AIML</p>
+                <span>9398328621</span>
+            </div>
+            <div class="coordinator-card glass-card" data-aos="fade-up" data-aos-delay="480">
+                <h3>Arkad Uday Varma</h3>
+                <p>3rd year-AIML</p>
+                <span>9390262306</span>
+            </div>
+            <div class="coordinator-card glass-card" data-aos="fade-up" data-aos-delay="520">
+                <h3>Yoshitha Abburi</h3>
+                <p>3rd year-AIML</p>
+                <span>8019324776</span>
+            </div>
+            <div class="coordinator-card glass-card" data-aos="fade-up" data-aos-delay="560">
+                <h3>Kothakota Leela Vinayak</h3>
+                <p>3rd year-AIML</p>
+                <span>8523086151</span>
+            </div>
+            <div class="coordinator-card glass-card" data-aos="fade-up">
+                <h3>Koniki Jahnavi</h3>
+                <p>4th year-CSE</p>
+                <span>8639980790</span>
+            </div>
+            <div class="coordinator-card glass-card" data-aos="fade-up" data-aos-delay="40">
+                <h3>Mohammed Sadiq</h3>
+                <p>4th year-CSE</p>
+                <span>9538979305</span>
+            </div>
+            <div class="coordinator-card glass-card" data-aos="fade-up" data-aos-delay="80">
+                <h3>Yerva Swetha</h3>
+                <p>4th year-CSE</p>
+                <span>9346252296</span>
+            </div>
+            <div class="coordinator-card glass-card" data-aos="fade-up" data-aos-delay="120">
+                <h3>Karanam Eswar</h3>
+                <p>4th year-CSE</p>
+                <span>9849703318</span>
+            </div>
+            <div class="coordinator-card glass-card" data-aos="fade-up" data-aos-delay="160">
+                <h3>Vanniya Nithya</h3>
+                <p>4th Year-CSE</p>
+                <span>9100702005</span>
+            </div>
+            <div class="coordinator-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                <h3>Sekapalli Tejasri</h3>
+                <p>4th Year-CSE</p>
+                <span>9390124306</span>
+            </div>
+            <div class="coordinator-card glass-card" data-aos="fade-up" data-aos-delay="240">
+                <h3>G Tejesh Reddy</h3>
+                <p>4th year-CSE</p>
+                <span>7780576246</span>
+            </div>
+            <div class="coordinator-card glass-card" data-aos="fade-up" data-aos-delay="280">
+                <h3>G Vyshnavi</h3>
+                <p>4th year-CSE</p>
+                <span>8247517157</span>
+            </div>
+            <div class="coordinator-card glass-card" data-aos="fade-up" data-aos-delay="320">
+                <h3>K Venmathi</h3>
+                <p>4th year-CSE</p>
+                <span>9642680494</span>
+            </div>
+            <div class="coordinator-card glass-card" data-aos="fade-up" data-aos-delay="320">
+                <h3>T MohanaPriya</h3>
+                <p>4th year-CSE</p>
+                <span>9642443931</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer id="contact">
+        <div class="footer-grid glass-card" style="margin: 0 auto; max-width: 1200px;">
+            <div>
+                <h3 class="footer-title">KAIROTHON 2K26</h3>
+                <p style="color: var(--text-dim); font-size: 0.88rem;">VEMU Institute of Technology<br>Department of CSE
+                    and Allied</p>
+                <div class="contact-info" style="margin-top: 20px;">
+                    <div><i class="fas fa-map-marker-alt"></i> P.Kothakota, Chittoor Dist</div>
+                    <div><i class="fas fa-envelope"></i> progclub.vemu@gmail.com</div>
+                    <div><i class="fas fa-phone"></i> +91 8019324776</div>
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#domains">Domains</a></li>
+                    <li><a href="#timeline">Timeline</a></li>
+                    <li><a href="#prizes">Prizes</a></li>
+                    <li><a href="#student-coordinators">Student Coordinators</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Socials</h3>
+                <ul class="footer-links" style="display: flex; flex-direction: column; gap: 12px;">
+                    <li><a href="https://www.facebook.com/vemuitchittoor" target="_blank"
+                            style="display: flex; align-items: center; gap: 10px;"><i class="fab fa-facebook"
+                                style="width: 16px; color: var(--neon-cyan);"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/vemuitchittoor" target="_blank"
+                            style="display: flex; align-items: center; gap: 10px;"><i class="fab fa-instagram"
+                                style="width: 16px; color: var(--neon-magenta);"></i> Instagram</a></li>
+                    <li><a href="https://www.youtube.com/@vemuitchittoor" target="_blank"
+                            style="display: flex; align-items: center; gap: 10px;"><i class="fab fa-youtube"
+                                style="width: 16px; color: var(--neon-orange);"></i> YouTube</a></li>
+                    <li><a href="#" style="display: flex; align-items: center; gap: 10px;"><i class="fab fa-linkedin"
+                                style="width: 16px; color: var(--neon-violet);"></i> LinkedIn</a></li>
+                    <li><a href="#" style="display: flex; align-items: center; gap: 10px;"><i class="fab fa-whatsapp"
+                                style="width: 16px; color: var(--neon-green);"></i> WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 KAIROTHON // CSE & Allied // VEMU IT</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
