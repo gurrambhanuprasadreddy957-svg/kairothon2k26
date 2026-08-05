@@ -572,6 +572,29 @@ section {
     gap: 22px;
 }
 
+/* Hero Tagline — "AI for a Smarter Tomorrow" */
+.hero-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0 0 10px;
+    text-shadow: none;
+}
+
+.tagline-decor {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #000000, transparent);
+    box-shadow: none;
+    border-radius: 1px;
+}
+
 /* Hero Mark — College / Event Logo (centered, premium) */
 .hero-mark {
     width: clamp(110px, 14vw, 160px);
@@ -836,14 +859,53 @@ section {
     animation: float 7s infinite ease-in-out;
 }
 
-.floating-icons i:nth-child(1) { top: 18%; left: 8%;  animation-delay: 0s; }
-.floating-icons i:nth-child(2) { top: 55%; left: 82%; animation-delay: 0.8s; }
-.floating-icons i:nth-child(3) { top: 28%; left: 72%; animation-delay: 1.6s; }
-.floating-icons i:nth-child(4) { top: 72%; left: 12%; animation-delay: 2.4s; }
-.floating-icons i:nth-child(5) { top: 82%; left: 55%; animation-delay: 3.2s; }
-.floating-icons i:nth-child(6) { top: 12%; left: 52%; animation-delay: 4.0s; }
-.floating-icons i:nth-child(7) { top: 45%; left: 5%;  animation-delay: 4.8s; }
-.floating-icons i:nth-child(8) { top: 38%; left: 90%; animation-delay: 5.6s; }
+.floating-icons i:nth-child(1) {
+    top: 18%;
+    left: 8%;
+    animation-delay: 0s;
+}
+
+.floating-icons i:nth-child(2) {
+    top: 55%;
+    left: 82%;
+    animation-delay: 0.8s;
+}
+
+.floating-icons i:nth-child(3) {
+    top: 28%;
+    left: 72%;
+    animation-delay: 1.6s;
+}
+
+.floating-icons i:nth-child(4) {
+    top: 72%;
+    left: 12%;
+    animation-delay: 2.4s;
+}
+
+.floating-icons i:nth-child(5) {
+    top: 82%;
+    left: 55%;
+    animation-delay: 3.2s;
+}
+
+.floating-icons i:nth-child(6) {
+    top: 12%;
+    left: 52%;
+    animation-delay: 4.0s;
+}
+
+.floating-icons i:nth-child(7) {
+    top: 45%;
+    left: 5%;
+    animation-delay: 4.8s;
+}
+
+.floating-icons i:nth-child(8) {
+    top: 38%;
+    left: 90%;
+    animation-delay: 5.6s;
+}
 
 @keyframes float {
 
@@ -1581,11 +1643,25 @@ footer::before {
     font-size: 1rem;
 }
 
-.footer-social-link .fa-facebook { color: var(--neon-cyan); }
-.footer-social-link .fa-instagram { color: var(--neon-magenta); }
-.footer-social-link .fa-youtube { color: var(--neon-orange); }
-.footer-social-link .fa-linkedin { color: var(--neon-violet); }
-.footer-social-link .fa-whatsapp { color: var(--neon-green); }
+.footer-social-link .fa-facebook {
+    color: var(--neon-cyan);
+}
+
+.footer-social-link .fa-instagram {
+    color: var(--neon-magenta);
+}
+
+.footer-social-link .fa-youtube {
+    color: var(--neon-orange);
+}
+
+.footer-social-link .fa-linkedin {
+    color: var(--neon-violet);
+}
+
+.footer-social-link .fa-whatsapp {
+    color: var(--neon-green);
+}
 
 .footer-title {
     font-size: 1rem;
