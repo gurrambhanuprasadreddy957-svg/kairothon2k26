@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ---- Countdown Timer ----
-    const countDownDate = new Date("Aug 10, 2026 09:00:00").getTime();
+    const countDownDate = new Date("Aug 13, 2026 09:00:00").getTime();
 
     function updateCountdown() {
         const now = new Date().getTime();
@@ -232,46 +232,11 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // ---- Animated Counter for Stats ----
-    const statValues = document.querySelectorAll('.stat-value[data-target]');
-
-    function animateCounter(el) {
-        const target = parseInt(el.getAttribute('data-target'));
-        const duration = 2000;
-        const start = performance.now();
-
-        function step(currentTime) {
-            const elapsed = currentTime - start;
-            const progress = Math.min(elapsed / duration, 1);
-            // Ease out cubic
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const current = Math.floor(eased * target);
-            el.textContent = current + (target >= 100 ? '+' : '');
-            if (progress < 1) {
-                requestAnimationFrame(step);
-            } else {
-                el.textContent = target + (target >= 100 ? '+' : '');
-            }
-        }
-        requestAnimationFrame(step);
-    }
-
-    if (statValues.length > 0) {
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter(entry.target);
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        statValues.forEach(el => statsObserver.observe(el));
-    }
-
     // ---- 3D Tilt on Glass Cards (Desktop) ----
     if (window.matchMedia('(hover: hover)').matches) {
         document.querySelectorAll('.glass-card').forEach(card => {
+            // Skip the registration modal so it never gets a 3D tilt
+            if (card.closest('#reg-modal')) return;
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
@@ -359,4 +324,107 @@ document.addEventListener('DOMContentLoaded', function () {
     // ---- Console Branding ----
     console.log('%c⚡ KAIROTHON 2K26', 'color: var(--neon-cyan); font-size: 28px; font-weight: bold; text-shadow: 0 0 10px var(--neon-cyan);');
     console.log('%c// A Fusion of Innovation — VEMU IT', 'color: #8888aa; font-size: 12px; font-family: monospace;');
+
+    // ============================================
+    // Registration Modal — opens the official Google Form
+    // ============================================
+    // The in-site custom form was replaced with the official Google Form:
+    //   https://forms.gle/JM21pp3rQ7GE6NMV9
+    // Responses go straight to the Google Form owner's spreadsheet.
+    const FORM_VIEW_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdbDgJ1D2ySPhmpgKCnr-lx2ABsrCU1OdVxvXcb3vDQ5ctAqQ/viewform';
+    const EMBED_URL = FORM_VIEW_URL + '?embedded=true';
+
+    const regModal = document.getElementById('reg-modal');
+    const regHeader = document.getElementById('reg-header');
+    const regFormWrap = document.getElementById('reg-form-wrap');
+    const regIframe = document.getElementById('reg-google-form');
+    const regSuccess = document.getElementById('reg-success');
+    const regSuccessDetails = document.getElementById('reg-success-details');
+    const regSuccessClose = document.getElementById('reg-success-close');
+
+    // The embedded form fires one load event for the form itself. A second
+    // load means Google navigated to the "Your response has been recorded"
+    // confirmation page, i.e. the student finished registering.
+    let regIframeLoads = 0;
+
+    function openRegModal() {
+        if (!regModal) return;
+        regModal.classList.add('open');
+        regModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('reg-open');
+        // Reload the iframe so the form is fresh on every open
+        regIframeLoads = 0;
+        if (regIframe) regIframe.src = EMBED_URL;
+    }
+
+    function showRegSuccess() {
+        if (regHeader) regHeader.hidden = true;
+        if (regFormWrap) regFormWrap.hidden = true;
+        if (regSuccessDetails) regSuccessDetails.hidden = true;
+        regSuccess.hidden = false;
+    }
+
+    function resetRegModal() {
+        if (regSuccess) regSuccess.hidden = true;
+        if (regHeader) regHeader.hidden = false;
+        if (regFormWrap) regFormWrap.hidden = false;
+        regIframeLoads = 0;
+    }
+
+    function closeRegModal() {
+        if (!regModal) return;
+        regModal.classList.remove('open');
+        regModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('reg-open');
+        setTimeout(resetRegModal, 250);
+    }
+
+    if (regIframe) {
+        regIframe.addEventListener('load', () => {
+            regIframeLoads++;
+            if (regIframeLoads > 1 && regModal.classList.contains('open')) {
+                showRegSuccess();
+            }
+        });
+    }
+
+    // "Done" on the success screen closes the modal
+    if (regSuccessClose) {
+        regSuccessClose.addEventListener('click', closeRegModal);
+    }
+
+    // Open modal: any anchor that points to the original Google Form, or has
+    // a .nav-register / "Register" CTA, or the hero "Register Now" button.
+    function isRegisterTrigger(el) {
+        if (!el) return false;
+        // The "Open in new tab" link inside the modal must not be intercepted
+        if (el.classList?.contains('reg-embed-open')) return false;
+        if (el.classList?.contains('nav-register')) return true;
+        if (el.classList?.contains('btn-primary') && /register/i.test(el.textContent || '')) return true;
+        const href = el.getAttribute?.('href') || '';
+        if (/forms\.gle|docs\.google\.com\/forms/i.test(href)) return true;
+        return false;
+    }
+
+    document.querySelectorAll('a').forEach(a => {
+        if (isRegisterTrigger(a)) {
+            a.addEventListener('click', (e) => {
+                // Only intercept in-page register links; let the actual Google
+                // Form link open in a new tab if user explicitly wants it
+                // (we already replaced it with the modal experience).
+                e.preventDefault();
+                openRegModal();
+            });
+        }
+    });
+
+    // Close interactions
+    if (regModal) {
+        regModal.querySelectorAll('[data-reg-close]').forEach(el => {
+            el.addEventListener('click', closeRegModal);
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && regModal.classList.contains('open')) closeRegModal();
+        });
+    }
 });
