@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ---- Countdown Timer ----
-    const countDownDate = new Date("Aug 10, 2026 09:00:00").getTime();
+    const countDownDate = new Date("Aug 13, 2026 09:00:00").getTime();
 
     function updateCountdown() {
         const now = new Date().getTime();
