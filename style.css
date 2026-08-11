@@ -1462,6 +1462,12 @@ section {
     line-height: 1.7;
 }
 
+.timeline-btn {
+    margin-top: 16px;
+    font-size: 0.85rem;
+    padding: 10px 22px;
+}
+
 /* ============================================
    Prizes
    ============================================ */
