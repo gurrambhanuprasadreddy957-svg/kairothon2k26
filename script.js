@@ -329,9 +329,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Registration Modal — opens the official Google Form
     // ============================================
     // The in-site custom form was replaced with the official Google Form:
-    //   https://forms.gle/JM21pp3rQ7GE6NMV9
+    //   https://forms.gle/aG8znHAez719YnPB6
     // Responses go straight to the Google Form owner's spreadsheet.
-    const FORM_VIEW_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdbDgJ1D2ySPhmpgKCnr-lx2ABsrCU1OdVxvXcb3vDQ5ctAqQ/viewform';
+    const FORM_VIEW_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSf2ZM_EdKhDC-wH2ONWUS7QSsMLn1dGeCsqTv4DgorXgRLuag/viewform';
     const EMBED_URL = FORM_VIEW_URL + '?embedded=true';
 
     const regModal = document.getElementById('reg-modal');
